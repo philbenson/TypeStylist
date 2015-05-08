@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TypeStylist</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/typestylist.css">
+</head>
+<body>
+    <div class="sidebar">
+        <!--Base Styles-->
+        <div class="controls">
+            <h1>TypeStylist<br>
+                <small>A web typography tool by <a href="//philbenson.name" target="_blank">Phil Benson</a></small></h1>
+
+            <h2>Base Styles</h2>
+
+            <div class="control">
+                <label for="base-font-family">Font Family:</label>
+                <select name="base-font-family" id="base-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="base-font-style">Font Style:</label>
+                <select name="base-font-style" id="base-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="base-font-variant">Font Variant:</label>
+                <select name="base-font-variant" id="base-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="base-font-size">Font Size:</label>
+                <input type="number" name="base-font-size" id="base-font-size" value="16" min="0"> px = 1em
+            </div>
+
+            <div class="control">
+                <label for="base-font-weight">Font Weight:</label>
+                <select name="base-font-weight" id="base-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400" selected>400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700">700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="base-line-height">Line Height:</label>
+                <input type="number" name="base-line-height" id="base-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="base-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="base-letter-spacing" id="base-letter-spacing" value="0" step=".01"> em
+            </div>
+        </div>
+
+        <!--Heading Styles-->
+        <div class="controls">
+            <h2 class="no-bottom-margin">Heading Styles</h2>
+            <small>Caution: Changing these will overwrite h1-6 styles below.</small>
+
+            <div class="control">
+                <label for="heading-font-family">Font Family:</label>
+                <select name="heading-font-family" id="heading-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="heading-font-style">Font Style:</label>
+                <select name="heading-font-style" id="heading-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="heading-font-variant">Font Variant:</label>
+                <select name="heading-font-variant" id="heading-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="heading-font-weight">Font Weight:</label>
+                <select name="heading-font-weight" id="heading-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="heading-line-height">Line Height:</label>
+                <input type="number" name="heading-line-height" id="heading-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="heading-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="heading-letter-spacing" id="heading-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="heading-text-transform">Text Transform:</label>
+                <select name="heading-text-transform" id="heading-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h1 Styles-->
+        <div class="controls">
+            <h2>&lt;h1&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h1-font-family">Font Family:</label>
+                <select name="h1-font-family" id="h1-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h1-font-style">Font Style:</label>
+                <select name="h1-font-style" id="h1-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h1-font-variant">Font Variant:</label>
+                <select name="h1-font-variant" id="h1-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h1-font-size">Font Size:</label>
+                <input type="number" name="h1-font-size" id="h1-font-size" value="1.9" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h1-font-weight">Font Weight:</label>
+                <select name="h1-font-weight" id="h1-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h1-line-height">Line Height:</label>
+                <input type="number" name="h1-line-height" id="h1-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h1-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h1-letter-spacing" id="h1-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h1-text-transform">Text Transform:</label>
+                <select name="h1-text-transform" id="h1-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h2 Styles-->
+        <div class="controls">
+            <h2>&lt;h2&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h2-font-family">Font Family:</label>
+                <select name="h2-font-family" id="h2-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h2-font-style">Font Style:</label>
+                <select name="h2-font-style" id="h2-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h2-font-variant">Font Variant:</label>
+                <select name="h2-font-variant" id="h2-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h2-font-size">Font Size:</label>
+                <input type="number" name="h2-font-size" id="h2-font-size" value="1.75" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h2-font-weight">Font Weight:</label>
+                <select name="h2-font-weight" id="h2-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h2-line-height">Line Height:</label>
+                <input type="number" name="h2-line-height" id="h2-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h2-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h2-letter-spacing" id="h2-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h2-text-transform">Text Transform:</label>
+                <select name="h2-text-transform" id="h2-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h3 Styles-->
+        <div class="controls">
+            <h2>&lt;h3&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h3-font-family">Font Family:</label>
+                <select name="h3-font-family" id="h3-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h3-font-style">Font Style:</label>
+                <select name="h3-font-style" id="h3-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h3-font-variant">Font Variant:</label>
+                <select name="h3-font-variant" id="h3-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h3-font-size">Font Size:</label>
+                <input type="number" name="h3-font-size" id="h3-font-size" value="1.6" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h3-font-weight">Font Weight:</label>
+                <select name="h3-font-weight" id="h3-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h3-line-height">Line Height:</label>
+                <input type="number" name="h3-line-height" id="h3-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h3-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h3-letter-spacing" id="h3-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h3-text-transform">Text Transform:</label>
+                <select name="h3-text-transform" id="h3-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h4 Styles-->
+        <div class="controls">
+            <h2>&lt;h4&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h4-font-family">Font Family:</label>
+                <select name="h4-font-family" id="h4-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h4-font-style">Font Style:</label>
+                <select name="h4-font-style" id="h4-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h4-font-variant">Font Variant:</label>
+                <select name="h4-font-variant" id="h4-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h4-font-size">Font Size:</label>
+                <input type="number" name="h4-font-size" id="h4-font-size" value="1.45" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h4-font-weight">Font Weight:</label>
+                <select name="h4-font-weight" id="h4-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h4-line-height">Line Height:</label>
+                <input type="number" name="h4-line-height" id="h4-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h4-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h4-letter-spacing" id="h4-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h4-text-transform">Text Transform:</label>
+                <select name="h4-text-transform" id="h4-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h5 Styles-->
+        <div class="controls">
+            <h2>&lt;h5&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h5-font-family">Font Family:</label>
+                <select name="h5-font-family" id="h5-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h5-font-style">Font Style:</label>
+                <select name="h5-font-style" id="h5-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h5-font-variant">Font Variant:</label>
+                <select name="h5-font-variant" id="h5-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h5-font-size">Font Size:</label>
+                <input type="number" name="h5-font-size" id="h5-font-size" value="1.3" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h5-font-weight">Font Weight:</label>
+                <select name="h5-font-weight" id="h5-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h5-line-height">Line Height:</label>
+                <input type="number" name="h5-line-height" id="h5-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h5-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h5-letter-spacing" id="h5-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h5-text-transform">Text Transform:</label>
+                <select name="h5-text-transform" id="h5-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--h6 Styles-->
+        <div class="controls">
+            <h2>&lt;h6&gt; Styles</h2>
+
+            <div class="control">
+                <label for="h6-font-family">Font Family:</label>
+                <select name="h6-font-family" id="h6-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="h6-font-style">Font Style:</label>
+                <select name="h6-font-style" id="h6-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h6-font-variant">Font Variant:</label>
+                <select name="h6-font-variant" id="h6-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h6-font-size">Font Size:</label>
+                <input type="number" name="h6-font-size" id="h6-font-size" value="1.15" min="0" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="h6-font-weight">Font Weight:</label>
+                <select name="h6-font-weight" id="h6-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700" selected>700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="h6-line-height">Line Height:</label>
+                <input type="number" name="h6-line-height" id="h6-line-height" value="1.5" step=".1" min="0"> em
+            </div>
+
+            <div class="control">
+                <label for="h6-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="h6-letter-spacing" id="h6-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="h6-text-transform">Text Transform:</label>
+                <select name="h6-text-transform" id="h6-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--small Styles-->
+        <div class="controls">
+            <h2>&lt;small&gt; Styles</h2>
+
+            <div class="control">
+                <label for="small-font-family">Font Family:</label>
+                <select name="small-font-family" id="small-font-family"></select>
+            </div>
+
+            <div class="control">
+                <label for="small-font-style">Font Style:</label>
+                <select name="small-font-style" id="small-font-style">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="small-font-variant">Font Variant:</label>
+                <select name="small-font-variant" id="small-font-variant">
+                    <option value="normal" selected>Normal</option>
+                    <option value="small-caps">Small Caps</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="small-font-size">Font Size:</label>
+                <input type="number" name="small-font-size" id="small-font-size" value="0.6" min="0" max="1" step=".05"> em
+            </div>
+
+            <div class="control">
+                <label for="small-font-weight">Font Weight:</label>
+                <select name="small-font-weight" id="small-font-weight">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400" selected>400 (Regular)</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700">700 (Bold)</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                </select>
+            </div>
+
+            <!--<div class="control">
+                <label for="small-line-height">Line Height:</label>
+                <input type="number" name="small-line-height" id="small-line-height" value="1.5" step=".1" min="0"> em
+            </div>-->
+
+            <div class="control">
+                <label for="small-letter-spacing">Letter Spacing:</label>
+                <input type="number" name="small-letter-spacing" id="small-letter-spacing" value="0" step=".01"> em
+            </div>
+
+            <div class="control">
+                <label for="small-text-transform">Text Transform:</label>
+                <select name="small-text-transform" id="small-text-transform">
+                    <option value="none" selected>None</option>
+                    <option value="capitalize">Capitalize</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                </select>
+            </div>
+        </div>
+
+        <!--List Style-->
+        <div class="controls">
+            <h2>List Style</h2>
+
+            <div class="control">
+                <label for="list-margin-left">Margin Left:</label>
+                <input type="number" name="list-margin-left" id="list-margin-left" value="10" min="0"> px
+            </div>
+        </div>
+
+        <!--ol Style-->
+        <div class="controls">
+            <h2>&lt;ol&gt; Style</h2>
+
+            <!--<div class="control">
+                <label for="ol-margin-left">Margin Left:</label>
+                <input type="number" name="ol-margin-left" id="ol-margin-left" value="10" min="0"> px
+            </div>-->
+
+            <div class="control">
+                <label for="ol-list-style-type">List Style Type:</label>
+                <select name="ol-list-style-type" id="ol-list-style-type">
+                    <option value="decimal" selected>Decimal</option>
+                    <option value="upper-alpha">Upper Alpha</option>
+                    <option value="lower-alpha">Lower Alpha</option>
+                    <option value="upper-roman">Upper Roman</option>
+                    <option value="lower-roman">Lower Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <!--Nested ol Style-->
+        <div class="controls">
+            <h2>Nested &lt;ol&gt; Style</h2>
+
+            <div class="control">
+                <label for="nested-ol-list-style-type">List Style Type:</label>
+                <select name="nested-ol-list-style-type" id="nested-ol-list-style-type">
+                    <option value="decimal">Decimal</option>
+                    <option value="upper-alpha">Upper Alpha</option>
+                    <option value="lower-alpha" selected>Lower Alpha</option>
+                    <option value="upper-roman">Upper Roman</option>
+                    <option value="lower-roman">Lower Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <!--ul Style-->
+        <div class="controls">
+            <h2>&lt;ul&gt; Style</h2>
+
+            <!--<div class="control">
+                <label for="ul-margin-left">Margin Left:</label>
+                <input type="number" name="ul-margin-left" id="ul-margin-left" value="10" min="0"> px
+            </div>-->
+
+            <div class="control">
+                <label for="ul-list-style-type">List Style Type:</label>
+                <select name="ul-list-style-type" id="ul-list-style-type">
+                    <option value="disc" selected>Disc</option>
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                    <option value="none">None</option>
+                </select>
+                <small>Or choose from <a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">these</a></small>
+            </div>
+        </div>
+
+        <!--Nested ul Style-->
+        <div class="controls">
+            <h2>Nested &lt;ul&gt; Style</h2>
+
+            <div class="control">
+                <label for="nested-ul-list-style-type">List Style Type:</label>
+                <select name="nested-ul-list-style-type" id="nested-ul-list-style-type">
+                    <option value="disc">Disc</option>
+                    <option value="circle" selected>Circle</option>
+                    <option value="square">Square</option>
+                    <option value="none">None</option>
+                </select>
+                <small>Or choose from <a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">these</a></small>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview">
+        <h1>Heading 1
+            <small>Small Text</small>
+        </h1>
+        <h2>Heading 2
+            <small>Small Text</small>
+        </h2>
+        <h3>Heading 3
+            <small>Small Text</small>
+        </h3>
+        <h4>Heading 4
+            <small>Small Text</small>
+        </h4>
+        <h5>Heading 5
+            <small>Small Text</small>
+        </h5>
+        <h6>Heading 6
+            <small>Small Text</small>
+        </h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad alias aperiam cum dignissimos ea eius enim est fugiat maxime molestias nam nesciunt nulla numquam, obcaecati porro quisquam velit veniam, vero voluptate? Asperiores beatae dicta, doloremque eum facere ipsa itaque maiores, molestiae nihil porro quae qui quibusdam vero. Accusamus ad adipisci animi aut commodi cum debitis deserunt earum eos facilis laborum minima nam nisi nostrum officia porro possimus, quibusdam quidem rerum saepe sed tenetur vel velit vero voluptatibus? Iusto, nihil!</p>
+
+        <p>Aspernatur consequatur consequuntur dignissimos, doloremque dolorum ea, earum eveniet ex illum incidunt ipsa ipsum maiores natus odio rerum sunt voluptas voluptates! Distinctio eligendi illo incidunt mollitia non. Consequuntur deserunt iste minus perspiciatis quia quidem reprehenderit tempora tenetur veniam voluptas. A adipisci deserunt earum expedita explicabo iure iusto laboriosam, molestias, numquam obcaecati pariatur reiciendis, suscipit voluptas? Accusantium, eos explicabo harum magnam nostrum nulla optio recusandae sunt veritatis? Aliquid aperiam doloribus eaque, earum maxime molestiae nobis saepe, temporibus vel velit veritatis vero!</p>
+        <ol>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item
+                <ol>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                </ol>
+            </li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ol>
+        <ul>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item
+                <ul>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                </ul>
+            </li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+        <p>Ad aliquam at cumque deserunt doloribus eaque est explicabo id iure minus nihil, odit pariatur repellendus tempore veritatis vitae voluptatum? Alias aliquid beatae consequatur cum distinctio eligendi esse exercitationem, fugiat magnam maxime quibusdam sunt unde vero? A ab adipisci, asperiores assumenda aut consequuntur cum dicta dignissimos dolorum ea eum explicabo fugiat harum ipsam ipsum laboriosam laudantium magnam nemo nihil nulla quibusdam quos ratione recusandae saepe sint sunt tempora vero! Architecto dolor dolorem et in minus nisi porro quos velit voluptatem!</p>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/typestylist.js"></script>
+
+    <!--List installed fonts (adapted from http://hasseg.org/blog/post/526/getting-a-list-of-installed-fonts-with-flash-and-javascript/)-->
+    <script>
+        function populateFontList(fontArr)
+        {
+            var allFontsCounter = 0;
+            var regularFontsCounter = 0;
+            var allFontsHTML = '<option value="Helvetica Neue" selected>Default (Helvetica Neue)</option>';
+            var regularFontsHTML = allFontsHTML;
+
+            for (var key in fontArr)
+            {
+                var fontName = fontArr[key];
+
+                // trim
+                fontName = fontName.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+                if (fontName.match(/[_\-\s]Italic$/)
+                        || fontName.match(/[_\-\s](Demi)?[Bb]old$/)
+                        || fontName.match(/[_\-\s]Medium$/)
+                        || fontName.match(/[_\-\s](Ultra)?[Ll]ight$/)
+                        || fontName.match(/[_\-\s]Condensed$/)
+                )
+                    allFontsHTML += '<option value="'+fontName+'">'+fontName+'</option>';
+                else
+                {
+                    allFontsHTML += '<option value="'+fontName+'">'+fontName+'</option>';
+                    fontName = fontName.replace(/\s*Regular$/, '');
+                    regularFontsHTML += '<option value="'+fontName+'">'+fontName+'</option>';
+                    regularFontsCounter++;
+                }
+
+                allFontsCounter++;
+            }
+
+            regularFontsHTML += '</ul>';
+            allFontsHTML += '</ul>';
+            allFontsHTML = allFontsCounter+' fonts altogether:'+allFontsHTML;
+            regularFontsHTML = regularFontsCounter+' "regular" fonts:'+regularFontsHTML;
+
+            document.getElementById('base-font-family').innerHTML = allFontsHTML;
+            document.getElementById('heading-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h1-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h2-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h3-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h4-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h5-font-family').innerHTML = allFontsHTML;
+            document.getElementById('h6-font-family').innerHTML = allFontsHTML;
+            document.getElementById('small-font-family').innerHTML = allFontsHTML;
+        }
+    </script>
+    <object id="fontListSWF" name="fontListSWF" type="application/x-shockwave-flash" data="swf/font-list.swf" width="1" height="1">
+        <param name="movie" value="swf/font-list.swf">
+        <embed src="swf/font-list.swf" width="1" height="1"></embed>
+    </object>
+</body>
+</html>

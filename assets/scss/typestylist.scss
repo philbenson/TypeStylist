@@ -1,0 +1,132 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Arial";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0;
+}
+
+p, ol, ul, blockquote {
+    margin-bottom: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5em;
+    font-weight: 700;
+}
+
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.45em; }
+h5 { font-size: 1.3em; }
+h6 { font-size: 1.15em; }
+
+small { font-size: .6em; }
+
+ol {
+    margin-left: 10px;
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+ol ol {
+    margin-bottom: 0 !important;
+    list-style-type: lower-alpha;
+}
+
+ul {
+    margin-left: 10px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+ul ul {
+    margin-bottom: 0 !important;
+    list-style-type: circle;
+}
+
+li {
+    // margin-left: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    overflow-y: auto;
+    width: 320px;
+    height: 100%;
+    padding: 10px;
+    background-color: #212224;
+    * {
+        font-family: "Helvetica Neue", "Helvetica", "Arial" !important;
+        font-style: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+    }
+    a {
+        text-decoration: none;
+        color: #999;
+        &:hover { text-decoration: underline; }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 400 !important;
+        line-height: 1.5em !important;
+        letter-spacing: 0 !important;
+    }
+    h1 {
+        margin-bottom: 30px !important;
+        font-size: 1.3em !important;
+        font-weight: 700 !important;
+    }
+    h2 {
+        margin-bottom: 5px !important;
+        border-bottom: 1px solid #333 !important;
+        font-size: 1.15em !important;
+        font-weight: 500 !important;
+        color: #ccc !important;
+    }
+    small {
+        font-size: .75em !important;
+        font-weight: 400 !important;
+        line-height: 1.5em !important;
+        letter-spacing: 0 !important;
+        color: #777 !important;
+    }
+    input, select {
+        border: 0 !important;
+        border-radius: 4px !important;
+        padding: .25em !important;
+        font-size: .75em !important;
+        background-color: #333 !important;
+        color: #eee !important;
+    }
+    input[type=number] {
+        width: 50px !important;
+        text-align: right !important;
+    }
+    select {
+        height: 2em !important;
+    }
+    .controls {
+        margin-bottom: 30px !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.5em !important;
+        letter-spacing: 0 !important;
+        color: #ddd !important;
+        .control {
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+        }
+    }
+    .no-bottom-margin {
+        margin-bottom: 0 !important;
+    }
+}
+
+.preview {
+    position: absolute;
+    width: auto;
+    margin-left: 340px;
+    padding: 10px;
+}
