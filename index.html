@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="typestylist">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,17 @@
     <title>TypeStylist</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="css/typestylist.css">
+    <style>
+        body {
+            font-family: {{ base.fontFamily }};
+            font-style: {{ base.fontStyle }};
+            font-variant: {{ base.fontVariant }};
+            font-size: {{ base.fontSize }}px;
+            font-weight: {{ base.fontWeight }};
+            line-height: {{ base.lineHeight }}em;
+            letter-spacing {{ base.letterSpacing }}em;
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -19,12 +30,12 @@
 
             <div class="control">
                 <label for="base-font-family">Font Family:</label>
-                <select name="base-font-family" id="base-font-family"></select>
+                <select name="base-font-family" id="base-font-family" ng-model="base.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="base-font-style">Font Style:</label>
-                <select name="base-font-style" id="base-font-style">
+                <select name="base-font-style" id="base-font-style" ng-model="base.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -32,7 +43,7 @@
 
             <div class="control">
                 <label for="base-font-variant">Font Variant:</label>
-                <select name="base-font-variant" id="base-font-variant">
+                <select name="base-font-variant" id="base-font-variant" ng-model="base.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -40,12 +51,12 @@
 
             <div class="control">
                 <label for="base-font-size">Font Size:</label>
-                <input type="number" name="base-font-size" id="base-font-size" value="16" min="0"> px = 1em
+                <input type="number" name="base-font-size" id="base-font-size" ng-model="base.fontSize" value="16" min="0"> px = 1em
             </div>
 
             <div class="control">
                 <label for="base-font-weight">Font Weight:</label>
-                <select name="base-font-weight" id="base-font-weight">
+                <select name="base-font-weight" id="base-font-weight" ng-model="base.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -60,12 +71,12 @@
 
             <div class="control">
                 <label for="base-line-height">Line Height:</label>
-                <input type="number" name="base-line-height" id="base-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="base-line-height" id="base-line-height" ng-model="base.lineHeight" value="1.5" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="base-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="base-letter-spacing" id="base-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="base-letter-spacing" id="base-letter-spacing" ng-model="base.letterSpacing" value="0" step=".01"> em
             </div>
         </div>
 
@@ -731,8 +742,12 @@
         <p>Ad aliquam at cumque deserunt doloribus eaque est explicabo id iure minus nihil, odit pariatur repellendus tempore veritatis vitae voluptatum? Alias aliquid beatae consequatur cum distinctio eligendi esse exercitationem, fugiat magnam maxime quibusdam sunt unde vero? A ab adipisci, asperiores assumenda aut consequuntur cum dicta dignissimos dolorum ea eum explicabo fugiat harum ipsam ipsum laboriosam laudantium magnam nemo nihil nulla quibusdam quos ratione recusandae saepe sint sunt tempora vero! Architecto dolor dolorem et in minus nisi porro quos velit voluptatem!</p>
     </div>
 
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="js/typestylist.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/dmStyle.js"></script>
+
+    <!-- <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/typestylist.js"></script> -->
 
     <!--List installed fonts (adapted from http://hasseg.org/blog/post/526/getting-a-list-of-installed-fonts-with-flash-and-javascript/)-->
     <script>
