@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="typestylist">
+<html lang="en" ng-app="typestylist" ng-controller="StyleController as styleCtrl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/typestylist.css">
     <style>
         body {
-            font-family: {{ base.fontFamily }};
-            font-style: {{ base.fontStyle }};
-            font-variant: {{ base.fontVariant }};
-            font-size: {{ base.fontSize }}px;
-            font-weight: {{ base.fontWeight }};
-            line-height: {{ base.lineHeight }}em;
-            letter-spacing {{ base.letterSpacing }}em;
+            font-family: {{ styleCtrl.base.fontFamily }};
+            font-style: {{ styleCtrl.base.fontStyle }};
+            font-variant: {{ styleCtrl.base.fontVariant }};
+            font-size: {{ styleCtrl.base.fontSize }}px;
+            font-weight: {{ styleCtrl.base.fontWeight }};
+            line-height: {{ styleCtrl.base.lineHeight }}em;
+            letter-spacing {{ styleCtrl.base.letterSpacing }}em;
         }
     </style>
 </head>
@@ -30,12 +30,12 @@
 
             <div class="control">
                 <label for="base-font-family">Font Family:</label>
-                <select name="base-font-family" id="base-font-family" ng-model="base.fontFamily"></select>
+                <select name="base-font-family" id="base-font-family" ng-model="styleCtrl.base.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="base-font-style">Font Style:</label>
-                <select name="base-font-style" id="base-font-style" ng-model="base.fontStyle">
+                <select name="base-font-style" id="base-font-style" ng-model="styleCtrl.base.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -43,7 +43,7 @@
 
             <div class="control">
                 <label for="base-font-variant">Font Variant:</label>
-                <select name="base-font-variant" id="base-font-variant" ng-model="base.fontVariant">
+                <select name="base-font-variant" id="base-font-variant" ng-model="styleCtrl.base.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -51,12 +51,12 @@
 
             <div class="control">
                 <label for="base-font-size">Font Size:</label>
-                <input type="number" name="base-font-size" id="base-font-size" ng-model="base.fontSize" value="16" min="0"> px = 1em
+                <input type="number" name="base-font-size" id="base-font-size" ng-model="styleCtrl.base.fontSize" min="0"> px = 1em
             </div>
 
             <div class="control">
                 <label for="base-font-weight">Font Weight:</label>
-                <select name="base-font-weight" id="base-font-weight" ng-model="base.fontWeight">
+                <select name="base-font-weight" id="base-font-weight" ng-model="styleCtrl.base.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -71,12 +71,12 @@
 
             <div class="control">
                 <label for="base-line-height">Line Height:</label>
-                <input type="number" name="base-line-height" id="base-line-height" ng-model="base.lineHeight" value="1.5" step=".1" min="0"> em
+                <input type="number" name="base-line-height" id="base-line-height" ng-model="styleCtrl.base.lineHeight" value="1.5" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="base-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="base-letter-spacing" id="base-letter-spacing" ng-model="base.letterSpacing" value="0" step=".01"> em
+                <input type="number" name="base-letter-spacing" id="base-letter-spacing" ng-model="styleCtrl.base.letterSpacing" value="0" step=".01"> em
             </div>
         </div>
 

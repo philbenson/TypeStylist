@@ -1,15 +1,38 @@
 (function() {
     app = angular.module('typestylist', ['dm.style']);
 
-    // angular.directive('style', function($compile) {
-    //     return {
-    //         restrict: 'E',
-    //         link: function postLink(scope, element) {
-    //             if (element.html()) {
-    //                 var template = $compile('<style ng-bind-template="' + element.html() + '"></style>');
-    //                 element.replaceWith(template(scope));
-    //             }
-    //         }
-    //     };
-    // });
+    app.controller('StyleController', function() {
+        var vm = this;
+        
+        vm.base = {
+            fontFamily: 'Helvetica Neue',
+            fontStyle: 'normal',
+            fontVariant: 'normal',
+            fontSize: 16,
+            fontWeight: '400',
+            lineHeight: 1.5,
+            letterSpacing: 0
+        };
+        
+        vm.heading = {
+            fontFamily: 'Helvetica Neue',
+            fontStyle: 'normal',
+            fontVariant: 'normal',
+            fontWeight: '700',
+            lineHeight: 1.5,
+            letterSpacing: 0,
+            textTransform: 'none'
+        };
+
+        vm.h1 = {
+            fontFamily: 'Helvetica Neue',
+            fontStyle: 'normal',
+            fontVariant: 'normal',
+            fontSize: 13,
+            fontWeight: '700',
+            lineHeight: 1.5,
+            letterSpacing: 0,
+            textTransform: 'none'
+        };
+    });
 })();
