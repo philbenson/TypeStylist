@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="typestylist" ng-controller="StyleController as styleCtrl">
+<html lang="en" ng-app="typeStylist" ng-controller="StyleController as styleCtrl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +15,104 @@
             font-size: {{ styleCtrl.base.fontSize }}px;
             font-weight: {{ styleCtrl.base.fontWeight }};
             line-height: {{ styleCtrl.base.lineHeight }}em;
-            letter-spacing {{ styleCtrl.base.letterSpacing }}em;
+            letter-spacing: {{ styleCtrl.base.letterSpacing }}em;
         }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: {{ styleCtrl.heading.fontFamily }};
+            font-style: {{ styleCtrl.heading.fontStyle }};
+            font-variant: {{ styleCtrl.heading.fontVariant }};
+            font-weight: {{ styleCtrl.heading.fontWeight }};
+            line-height: {{ styleCtrl.heading.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.heading.letterSpacing }}em;
+            text-transform: {{ styleCtrl.heading.textTransform }};
+        }
+
+        h1 {
+            font-family: {{ styleCtrl.h1.fontFamily }};
+            font-style: {{ styleCtrl.h1.fontStyle }};
+            font-variant: {{ styleCtrl.h1.fontVariant }};
+            font-size: {{ styleCtrl.h1.fontSize }}em;
+            font-weight: {{ styleCtrl.h1.fontWeight }};
+            line-height: {{ styleCtrl.h1.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h1.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h1.textTransform }};
+        }
+
+        h2 {
+            font-family: {{ styleCtrl.h2.fontFamily }};
+            font-style: {{ styleCtrl.h2.fontStyle }};
+            font-variant: {{ styleCtrl.h2.fontVariant }};
+            font-size: {{ styleCtrl.h2.fontSize }}em;
+            font-weight: {{ styleCtrl.h2.fontWeight }};
+            line-height: {{ styleCtrl.h2.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h2.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h2.textTransform }};
+        }
+
+        h3 {
+            font-family: {{ styleCtrl.h3.fontFamily }};
+            font-style: {{ styleCtrl.h3.fontStyle }};
+            font-variant: {{ styleCtrl.h3.fontVariant }};
+            font-size: {{ styleCtrl.h3.fontSize }}em;
+            font-weight: {{ styleCtrl.h3.fontWeight }};
+            line-height: {{ styleCtrl.h3.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h3.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h3.textTransform }};
+        }
+
+        h4 {
+            font-family: {{ styleCtrl.h4.fontFamily }};
+            font-style: {{ styleCtrl.h4.fontStyle }};
+            font-variant: {{ styleCtrl.h4.fontVariant }};
+            font-size: {{ styleCtrl.h4.fontSize }}em;
+            font-weight: {{ styleCtrl.h4.fontWeight }};
+            line-height: {{ styleCtrl.h4.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h4.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h4.textTransform }};
+        }
+
+        h5 {
+            font-family: {{ styleCtrl.h5.fontFamily }};
+            font-style: {{ styleCtrl.h5.fontStyle }};
+            font-variant: {{ styleCtrl.h5.fontVariant }};
+            font-size: {{ styleCtrl.h5.fontSize }}em;
+            font-weight: {{ styleCtrl.h5.fontWeight }};
+            line-height: {{ styleCtrl.h5.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h5.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h5.textTransform }};
+        }
+
+        h6 {
+            font-family: {{ styleCtrl.h6.fontFamily }};
+            font-style: {{ styleCtrl.h6.fontStyle }};
+            font-variant: {{ styleCtrl.h6.fontVariant }};
+            font-size: {{ styleCtrl.h6.fontSize }}em;
+            font-weight: {{ styleCtrl.h6.fontWeight }};
+            line-height: {{ styleCtrl.h6.lineHeight }}em;
+            letter-spacing: {{ styleCtrl.h6.letterSpacing }}em;
+            text-transform: {{ styleCtrl.h6.textTransform }};
+        }
+
+        small {
+            font-family: {{ styleCtrl.small.fontFamily }};
+            font-style: {{ styleCtrl.small.fontStyle }};
+            font-variant: {{ styleCtrl.small.fontVariant }};
+            font-size: {{ styleCtrl.small.fontSize }}em;
+            font-weight: {{ styleCtrl.small.fontWeight }};
+            letter-spacing: {{ styleCtrl.small.letterSpacing }}em;
+            text-transform: {{ styleCtrl.small.textTransform }};
+        }
+
+        ol, ul { margin-left: {{ styleCtrl.list.marginLeft }}px; }
+
+        ol { list-style-type: {{styleCtrl.ol.listStyleType }}; }
+
+        ol ol { list-style-type: {{styleCtrl.nestedOl.listStyleType }}; }
+
+        ul { list-style-type: {{styleCtrl.ul.listStyleType }}; }
+
+        ul ul { list-style-type: {{styleCtrl.nestedUl.listStyleType }}; }
     </style>
 </head>
 <body>
@@ -87,12 +183,12 @@
 
             <div class="control">
                 <label for="heading-font-family">Font Family:</label>
-                <select name="heading-font-family" id="heading-font-family"></select>
+                <select name="heading-font-family" id="heading-font-family" ng-model="styleCtrl.heading.fontFamily" ng-change="styleCtrl.resetHeadingFontFamily(styleCtrl.heading.fontFamily)"></select>
             </div>
 
             <div class="control">
                 <label for="heading-font-style">Font Style:</label>
-                <select name="heading-font-style" id="heading-font-style">
+                <select name="heading-font-style" id="heading-font-style" ng-model="styleCtrl.heading.fontStyle" ng-change="styleCtrl.resetHeadingFontStyle(styleCtrl.heading.fontStyle)">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -100,7 +196,7 @@
 
             <div class="control">
                 <label for="heading-font-variant">Font Variant:</label>
-                <select name="heading-font-variant" id="heading-font-variant">
+                <select name="heading-font-variant" id="heading-font-variant" ng-model="styleCtrl.heading.fontVariant" ng-change="styleCtrl.resetHeadingFontVariant(styleCtrl.heading.fontVariant)">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -108,7 +204,7 @@
 
             <div class="control">
                 <label for="heading-font-weight">Font Weight:</label>
-                <select name="heading-font-weight" id="heading-font-weight">
+                <select name="heading-font-weight" id="heading-font-weight" ng-model="styleCtrl.heading.fontWeight" ng-change="styleCtrl.resetHeadingFontWeight(styleCtrl.heading.fontWeight)">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -123,17 +219,17 @@
 
             <div class="control">
                 <label for="heading-line-height">Line Height:</label>
-                <input type="number" name="heading-line-height" id="heading-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="heading-line-height" id="heading-line-height"  ng-model="styleCtrl.heading.lineHeight" ng-change="styleCtrl.resetHeadingLineHeight(styleCtrl.heading.lineHeight)" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="heading-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="heading-letter-spacing" id="heading-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="heading-letter-spacing" id="heading-letter-spacing"  ng-model="styleCtrl.heading.letterSpacing" ng-change="styleCtrl.resetHeadingLetterSpacing(styleCtrl.heading.letterSpacing)" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="heading-text-transform">Text Transform:</label>
-                <select name="heading-text-transform" id="heading-text-transform">
+                <select name="heading-text-transform" id="heading-text-transform"  ng-model="styleCtrl.heading.textTransform" ng-change="styleCtrl.resetHeadingTextTransform(styleCtrl.heading.textTransform)">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -148,12 +244,12 @@
 
             <div class="control">
                 <label for="h1-font-family">Font Family:</label>
-                <select name="h1-font-family" id="h1-font-family"></select>
+                <select name="h1-font-family" id="h1-font-family" ng-model="styleCtrl.h1.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h1-font-style">Font Style:</label>
-                <select name="h1-font-style" id="h1-font-style">
+                <select name="h1-font-style" id="h1-font-style" ng-model="styleCtrl.h1.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -161,7 +257,7 @@
 
             <div class="control">
                 <label for="h1-font-variant">Font Variant:</label>
-                <select name="h1-font-variant" id="h1-font-variant">
+                <select name="h1-font-variant" id="h1-font-variant" ng-model="styleCtrl.h1.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -169,12 +265,12 @@
 
             <div class="control">
                 <label for="h1-font-size">Font Size:</label>
-                <input type="number" name="h1-font-size" id="h1-font-size" value="1.9" min="0" step=".05"> em
+                <input type="number" name="h1-font-size" id="h1-font-size" ng-model="styleCtrl.h1.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h1-font-weight">Font Weight:</label>
-                <select name="h1-font-weight" id="h1-font-weight">
+                <select name="h1-font-weight" id="h1-font-weight" ng-model="styleCtrl.h1.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -189,17 +285,17 @@
 
             <div class="control">
                 <label for="h1-line-height">Line Height:</label>
-                <input type="number" name="h1-line-height" id="h1-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h1-line-height" id="h1-line-height" ng-model="styleCtrl.h1.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h1-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h1-letter-spacing" id="h1-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h1-letter-spacing" id="h1-letter-spacing" ng-model="styleCtrl.h1.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h1-text-transform">Text Transform:</label>
-                <select name="h1-text-transform" id="h1-text-transform">
+                <select name="h1-text-transform" id="h1-text-transform" ng-model="styleCtrl.h1.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -214,12 +310,12 @@
 
             <div class="control">
                 <label for="h2-font-family">Font Family:</label>
-                <select name="h2-font-family" id="h2-font-family"></select>
+                <select name="h2-font-family" id="h2-font-family" ng-model="styleCtrl.h2.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h2-font-style">Font Style:</label>
-                <select name="h2-font-style" id="h2-font-style">
+                <select name="h2-font-style" id="h2-font-style" ng-model="styleCtrl.h2.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -227,7 +323,7 @@
 
             <div class="control">
                 <label for="h2-font-variant">Font Variant:</label>
-                <select name="h2-font-variant" id="h2-font-variant">
+                <select name="h2-font-variant" id="h2-font-variant" ng-model="styleCtrl.h2.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -235,12 +331,12 @@
 
             <div class="control">
                 <label for="h2-font-size">Font Size:</label>
-                <input type="number" name="h2-font-size" id="h2-font-size" value="1.75" min="0" step=".05"> em
+                <input type="number" name="h2-font-size" id="h2-font-size" ng-model="styleCtrl.h2.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h2-font-weight">Font Weight:</label>
-                <select name="h2-font-weight" id="h2-font-weight">
+                <select name="h2-font-weight" id="h2-font-weight" ng-model="styleCtrl.h2.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -255,17 +351,17 @@
 
             <div class="control">
                 <label for="h2-line-height">Line Height:</label>
-                <input type="number" name="h2-line-height" id="h2-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h2-line-height" id="h2-line-height" ng-model="styleCtrl.h2.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h2-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h2-letter-spacing" id="h2-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h2-letter-spacing" id="h2-letter-spacing" ng-model="styleCtrl.h2.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h2-text-transform">Text Transform:</label>
-                <select name="h2-text-transform" id="h2-text-transform">
+                <select name="h2-text-transform" id="h2-text-transform" ng-model="styleCtrl.h2.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -280,12 +376,12 @@
 
             <div class="control">
                 <label for="h3-font-family">Font Family:</label>
-                <select name="h3-font-family" id="h3-font-family"></select>
+                <select name="h3-font-family" id="h3-font-family" ng-model="styleCtrl.h3.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h3-font-style">Font Style:</label>
-                <select name="h3-font-style" id="h3-font-style">
+                <select name="h3-font-style" id="h3-font-style" ng-model="styleCtrl.h3.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -293,7 +389,7 @@
 
             <div class="control">
                 <label for="h3-font-variant">Font Variant:</label>
-                <select name="h3-font-variant" id="h3-font-variant">
+                <select name="h3-font-variant" id="h3-font-variant" ng-model="styleCtrl.h3.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -301,12 +397,12 @@
 
             <div class="control">
                 <label for="h3-font-size">Font Size:</label>
-                <input type="number" name="h3-font-size" id="h3-font-size" value="1.6" min="0" step=".05"> em
+                <input type="number" name="h3-font-size" id="h3-font-size" ng-model="styleCtrl.h3.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h3-font-weight">Font Weight:</label>
-                <select name="h3-font-weight" id="h3-font-weight">
+                <select name="h3-font-weight" id="h3-font-weight" ng-model="styleCtrl.h3.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -321,17 +417,17 @@
 
             <div class="control">
                 <label for="h3-line-height">Line Height:</label>
-                <input type="number" name="h3-line-height" id="h3-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h3-line-height" id="h3-line-height" ng-model="styleCtrl.h3.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h3-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h3-letter-spacing" id="h3-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h3-letter-spacing" id="h3-letter-spacing" ng-model="styleCtrl.h3.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h3-text-transform">Text Transform:</label>
-                <select name="h3-text-transform" id="h3-text-transform">
+                <select name="h3-text-transform" id="h3-text-transform" ng-model="styleCtrl.h3.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -346,12 +442,12 @@
 
             <div class="control">
                 <label for="h4-font-family">Font Family:</label>
-                <select name="h4-font-family" id="h4-font-family"></select>
+                <select name="h4-font-family" id="h4-font-family" ng-model="styleCtrl.h4.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h4-font-style">Font Style:</label>
-                <select name="h4-font-style" id="h4-font-style">
+                <select name="h4-font-style" id="h4-font-style" ng-model="styleCtrl.h4.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -359,7 +455,7 @@
 
             <div class="control">
                 <label for="h4-font-variant">Font Variant:</label>
-                <select name="h4-font-variant" id="h4-font-variant">
+                <select name="h4-font-variant" id="h4-font-variant" ng-model="styleCtrl.h4.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -367,12 +463,12 @@
 
             <div class="control">
                 <label for="h4-font-size">Font Size:</label>
-                <input type="number" name="h4-font-size" id="h4-font-size" value="1.45" min="0" step=".05"> em
+                <input type="number" name="h4-font-size" id="h4-font-size" ng-model="styleCtrl.h4.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h4-font-weight">Font Weight:</label>
-                <select name="h4-font-weight" id="h4-font-weight">
+                <select name="h4-font-weight" id="h4-font-weight" ng-model="styleCtrl.h4.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -387,17 +483,17 @@
 
             <div class="control">
                 <label for="h4-line-height">Line Height:</label>
-                <input type="number" name="h4-line-height" id="h4-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h4-line-height" id="h4-line-height" ng-model="styleCtrl.h4.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h4-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h4-letter-spacing" id="h4-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h4-letter-spacing" id="h4-letter-spacing" ng-model="styleCtrl.h4.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h4-text-transform">Text Transform:</label>
-                <select name="h4-text-transform" id="h4-text-transform">
+                <select name="h4-text-transform" id="h4-text-transform" ng-model="styleCtrl.h4.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -412,12 +508,12 @@
 
             <div class="control">
                 <label for="h5-font-family">Font Family:</label>
-                <select name="h5-font-family" id="h5-font-family"></select>
+                <select name="h5-font-family" id="h5-font-family" ng-model="styleCtrl.h5.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h5-font-style">Font Style:</label>
-                <select name="h5-font-style" id="h5-font-style">
+                <select name="h5-font-style" id="h5-font-style" ng-model="styleCtrl.h5.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -425,7 +521,7 @@
 
             <div class="control">
                 <label for="h5-font-variant">Font Variant:</label>
-                <select name="h5-font-variant" id="h5-font-variant">
+                <select name="h5-font-variant" id="h5-font-variant" ng-model="styleCtrl.h5.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -433,12 +529,12 @@
 
             <div class="control">
                 <label for="h5-font-size">Font Size:</label>
-                <input type="number" name="h5-font-size" id="h5-font-size" value="1.3" min="0" step=".05"> em
+                <input type="number" name="h5-font-size" id="h5-font-size" ng-model="styleCtrl.h5.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h5-font-weight">Font Weight:</label>
-                <select name="h5-font-weight" id="h5-font-weight">
+                <select name="h5-font-weight" id="h5-font-weight" ng-model="styleCtrl.h5.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -453,17 +549,17 @@
 
             <div class="control">
                 <label for="h5-line-height">Line Height:</label>
-                <input type="number" name="h5-line-height" id="h5-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h5-line-height" id="h5-line-height" ng-model="styleCtrl.h5.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h5-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h5-letter-spacing" id="h5-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h5-letter-spacing" id="h5-letter-spacing" ng-model="styleCtrl.h5.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h5-text-transform">Text Transform:</label>
-                <select name="h5-text-transform" id="h5-text-transform">
+                <select name="h5-text-transform" id="h5-text-transform" ng-model="styleCtrl.h5.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -478,12 +574,12 @@
 
             <div class="control">
                 <label for="h6-font-family">Font Family:</label>
-                <select name="h6-font-family" id="h6-font-family"></select>
+                <select name="h6-font-family" id="h6-font-family" ng-model="styleCtrl.h6.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="h6-font-style">Font Style:</label>
-                <select name="h6-font-style" id="h6-font-style">
+                <select name="h6-font-style" id="h6-font-style" ng-model="styleCtrl.h6.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -491,7 +587,7 @@
 
             <div class="control">
                 <label for="h6-font-variant">Font Variant:</label>
-                <select name="h6-font-variant" id="h6-font-variant">
+                <select name="h6-font-variant" id="h6-font-variant" ng-model="styleCtrl.h6.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -499,12 +595,12 @@
 
             <div class="control">
                 <label for="h6-font-size">Font Size:</label>
-                <input type="number" name="h6-font-size" id="h6-font-size" value="1.15" min="0" step=".05"> em
+                <input type="number" name="h6-font-size" id="h6-font-size" ng-model="styleCtrl.h6.fontSize" min="0" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="h6-font-weight">Font Weight:</label>
-                <select name="h6-font-weight" id="h6-font-weight">
+                <select name="h6-font-weight" id="h6-font-weight" ng-model="styleCtrl.h6.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -519,17 +615,17 @@
 
             <div class="control">
                 <label for="h6-line-height">Line Height:</label>
-                <input type="number" name="h6-line-height" id="h6-line-height" value="1.5" step=".1" min="0"> em
+                <input type="number" name="h6-line-height" id="h6-line-height" ng-model="styleCtrl.h6.lineHeight" step=".1" min="0"> em
             </div>
 
             <div class="control">
                 <label for="h6-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="h6-letter-spacing" id="h6-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="h6-letter-spacing" id="h6-letter-spacing" ng-model="styleCtrl.h6.letterSpacing" step=".01"> em
             </div>
 
             <div class="control">
                 <label for="h6-text-transform">Text Transform:</label>
-                <select name="h6-text-transform" id="h6-text-transform">
+                <select name="h6-text-transform" id="h6-text-transform" ng-model="styleCtrl.h6.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -544,12 +640,12 @@
 
             <div class="control">
                 <label for="small-font-family">Font Family:</label>
-                <select name="small-font-family" id="small-font-family"></select>
+                <select name="small-font-family" id="small-font-family" ng-model="styleCtrl.small.fontFamily"></select>
             </div>
 
             <div class="control">
                 <label for="small-font-style">Font Style:</label>
-                <select name="small-font-style" id="small-font-style">
+                <select name="small-font-style" id="small-font-style" ng-model="styleCtrl.small.fontStyle">
                     <option value="normal" selected>Normal</option>
                     <option value="italic">Italic</option>
                 </select>
@@ -557,7 +653,7 @@
 
             <div class="control">
                 <label for="small-font-variant">Font Variant:</label>
-                <select name="small-font-variant" id="small-font-variant">
+                <select name="small-font-variant" id="small-font-variant" ng-model="styleCtrl.small.fontVariant">
                     <option value="normal" selected>Normal</option>
                     <option value="small-caps">Small Caps</option>
                 </select>
@@ -565,12 +661,12 @@
 
             <div class="control">
                 <label for="small-font-size">Font Size:</label>
-                <input type="number" name="small-font-size" id="small-font-size" value="0.6" min="0" max="1" step=".05"> em
+                <input type="number" name="small-font-size" id="small-font-size" ng-model="styleCtrl.small.fontSize"min="0" max="1" step=".05"> em
             </div>
 
             <div class="control">
                 <label for="small-font-weight">Font Weight:</label>
-                <select name="small-font-weight" id="small-font-weight">
+                <select name="small-font-weight" id="small-font-weight" ng-model="styleCtrl.small.fontWeight">
                     <option value="100">100</option>
                     <option value="200">200</option>
                     <option value="300">300</option>
@@ -583,19 +679,14 @@
                 </select>
             </div>
 
-            <!--<div class="control">
-                <label for="small-line-height">Line Height:</label>
-                <input type="number" name="small-line-height" id="small-line-height" value="1.5" step=".1" min="0"> em
-            </div>-->
-
             <div class="control">
                 <label for="small-letter-spacing">Letter Spacing:</label>
-                <input type="number" name="small-letter-spacing" id="small-letter-spacing" value="0" step=".01"> em
+                <input type="number" name="small-letter-spacing" id="small-letter-spacing" ng-model="styleCtrl.small.letterSpacing"step=".01"> em
             </div>
 
             <div class="control">
                 <label for="small-text-transform">Text Transform:</label>
-                <select name="small-text-transform" id="small-text-transform">
+                <select name="small-text-transform" id="small-text-transform" ng-model="styleCtrl.small.textTransform">
                     <option value="none" selected>None</option>
                     <option value="capitalize">Capitalize</option>
                     <option value="uppercase">Uppercase</option>
@@ -610,7 +701,7 @@
 
             <div class="control">
                 <label for="list-margin-left">Margin Left:</label>
-                <input type="number" name="list-margin-left" id="list-margin-left" value="10" min="0"> px
+                <input type="number" name="list-margin-left" id="list-margin-left" ng-model="styleCtrl.list.marginLeft" min="0"> px
             </div>
         </div>
 
@@ -625,7 +716,7 @@
 
             <div class="control">
                 <label for="ol-list-style-type">List Style Type:</label>
-                <select name="ol-list-style-type" id="ol-list-style-type">
+                <select name="ol-list-style-type" id="ol-list-style-type" ng-model="styleCtrl.ol.listStyleType">
                     <option value="decimal" selected>Decimal</option>
                     <option value="upper-alpha">Upper Alpha</option>
                     <option value="lower-alpha">Lower Alpha</option>
@@ -641,7 +732,7 @@
 
             <div class="control">
                 <label for="nested-ol-list-style-type">List Style Type:</label>
-                <select name="nested-ol-list-style-type" id="nested-ol-list-style-type">
+                <select name="nested-ol-list-style-type" id="nested-ol-list-style-type" ng-model="styleCtrl.nestedOl.listStyleType">
                     <option value="decimal">Decimal</option>
                     <option value="upper-alpha">Upper Alpha</option>
                     <option value="lower-alpha" selected>Lower Alpha</option>
@@ -662,7 +753,7 @@
 
             <div class="control">
                 <label for="ul-list-style-type">List Style Type:</label>
-                <select name="ul-list-style-type" id="ul-list-style-type">
+                <select name="ul-list-style-type" id="ul-list-style-type" ng-model="styleCtrl.ul.listStyleType">
                     <option value="disc" selected>Disc</option>
                     <option value="circle">Circle</option>
                     <option value="square">Square</option>
@@ -678,7 +769,7 @@
 
             <div class="control">
                 <label for="nested-ul-list-style-type">List Style Type:</label>
-                <select name="nested-ul-list-style-type" id="nested-ul-list-style-type">
+                <select name="nested-ul-list-style-type" id="nested-ul-list-style-type" ng-model="styleCtrl.nestedUl.listStyleType">
                     <option value="disc">Disc</option>
                     <option value="circle" selected>Circle</option>
                     <option value="square">Square</option>

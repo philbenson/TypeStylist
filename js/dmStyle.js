@@ -1,4 +1,4 @@
-
+// Allows data binding within <style> tags (from: https://github.com/deanmcpherson/angular-inline-style)
 'use strict';
 
 angular.module('dm.style', [])
